@@ -25,12 +25,12 @@ const Body = (props: Iprops) => {
     return (
         <div>
             <div className='mb-time-title'>{mon || mon === 0 ? MONTH_LONG_MAP[mon] : '-'} {year}</div>
-            <div className='calander-rows-con week-title-con'>
+            <div className='mb-calander-rows-con mb-week-title-con'>
             {
                 WEEK_SHORT_ARRAY.map(week_name => {
                     return (
                         <div
-                            className='rows_week_title'
+                            className='mbrows_week_title'
                         >
                             {week_name}
                         </div>
@@ -40,23 +40,23 @@ const Body = (props: Iprops) => {
             </div>
             {
                 monthDays?.map(list => (
-                    <div className='calander-rows-con'>
+                    <div className='mb-calander-rows-con'>
                         {
                             list.map((date: any, ind: number) => {
                                 return (
                                     <div
-                                        className={`rows ${date && isInrenger(date.valueOf(), start, end) ? 'm2m-picker-cell-in-range' : ''}`}
+                                        className={`mbrows ${date && isInrenger(date.valueOf(), start, end) ? 'mbm2m-picker-cell-in-range' : ''}`}
                                     >
                                         {
                                             disableFn && disableFn(date) ?
-                                                <div className='rows-disable'>
+                                                <div className='mbrows-disable'>
                                                     { date ? date.getDate() : '' }
                                                 </div>
                                                 :
                                                 <>
-                                                    <div className={`${end && start && date && date.valueOf() === start ? 'ows-con-start-half' : ''} ${end && start && date && date.valueOf() === end ? 'ows-con-end-half' : ''}`} />
+                                                    <div className={`${end && start && date && date.valueOf() === start ? 'mbows-con-start-half' : ''} ${end && start && date && date.valueOf() === end ? 'mbows-con-end-half' : ''}`} />
                                                         <div
-                                                            className={`rows-con ${date && date.valueOf() === start ? 'm2m-picker-cell-in-start' : ''} ${date && date.valueOf() === end ? 'm2m-picker-cell-in-end' : ''}`}
+                                                            className={`mbrows-con ${date && date.valueOf() === start ? 'mbm2m-picker-cell-in-start' : ''} ${date && date.valueOf() === end ? 'mbm2m-picker-cell-in-end' : ''}`}
                                                             onClick={() => { onChange(date, ind) }}
                                                         >
                                                             {

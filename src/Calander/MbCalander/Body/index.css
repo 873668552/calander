@@ -15,15 +15,15 @@
     color: #0A0A28;
     margin: 6.4vw 0;
 }
-.calander-rows-con {
+.mb-calander-rows-con {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.week-title-con {
+.mb-week-title-con {
     margin-bottom: 3.733vw;
 }
-.rows_week_title {
+.mbrows_week_title {
     width: 6.4vw;
     height: 6.4vw;
     line-height: 6.4vw;
@@ -36,7 +36,7 @@
     color: #0A0A28;
 }
 
-.rows {
+.mbrows {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@
     position: relative;
     margin: 2px 0;
 }
-.ows-con-start-half {
+.mbows-con-start-half {
     position: absolute;
     width: 50%;
     height: 10.66vw;
@@ -55,7 +55,7 @@
     right: 0;
     top: 0;
 }
-.ows-con-end-half {
+.mbows-con-end-half {
     width: 50%;
     height: 10.66vw;
     background: #F6F7FA;
@@ -63,7 +63,7 @@
     left: 0;
     top: 0;
 }
-.rows-con {
+.mbrows-con {
     width: 10.66vw;
     height: 10.66vw;
     line-height: 10.66vw;
@@ -73,12 +73,12 @@
     z-index: 1;
 }
 
-.rows-con:hover {
+.mbrows-con:hover {
     border-radius: 5.33vw;
     border: 1px solid #3FA1D9;
 }
 
-.rows-disable {
+.mbrows-disable {
     color: #CCCCCC;
     font-family: 'Poppins';
     font-style: normal;
@@ -88,18 +88,18 @@
 }
 
 /* 开始日期 */
-.m2m-picker-cell-in-start {
+.mbm2m-picker-cell-in-start {
     background: #3FA1D9;
     /* border-radius: 50%; */
     color: white;
     border-radius: 5.33vw;
 }
 /* 选择 */
-.m2m-picker-cell-in-range {
+.mbm2m-picker-cell-in-range {
     background: #F6F7FA;
 }
 /* 结束日期 */
-.m2m-picker-cell-in-end {
+.mbm2m-picker-cell-in-end {
     background: #0A0A28;
     color: white;
     border-radius: 5.33vw;

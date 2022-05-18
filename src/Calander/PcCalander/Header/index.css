@@ -1,0 +1,29 @@
+.calander-header {
+    text-align: left;
+    margin-bottom: 1.25vw;
+}
+.calander-header-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.145vw;
+    line-height: 1.25vw;
+    color: #0A0A28;
+    margin-bottom: 0.2vw;
+}
+.calander-header-detail {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.73vw;
+    line-height: 1.25vw;
+    color: #73858B;
+}
+.calander-header-intro {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.73vw;
+    line-height: 1.25vw;
+    color: #73858B;
+}

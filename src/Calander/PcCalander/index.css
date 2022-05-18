@@ -1,0 +1,14 @@
+.calander_con {
+    width: 100%;
+    padding: 1.45vw 2.9vw;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #F6F7FA;
+    box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+}
+.calander_con_body {
+    display: flex;
+    justify-content: space-between;
+}
+

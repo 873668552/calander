@@ -1,0 +1,42 @@
+.calander-add-days {
+    margin-top: .833vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add-days-active {
+    background: #F6F7FA;
+}
+.add-days-btn {
+    flex: 1;
+    display: flex;
+}
+
+.add-days-btn-text {
+    width: 5.3vw;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    text-align: center;
+    color: #000000;
+    border: 1px solid #EAEDEE;
+    border-radius: .4vw;
+    cursor: pointer;
+    margin-right: .4vw;
+}
+.add-days-btn-text:hover {
+    background: #F6F7FA;
+}
+
+.add-days-clear {
+    width: 4.5vw;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    text-align: center;
+    background: #F6F7FA;
+    border-radius: .6vw;
+    cursor: pointer;
+}
+.add-days-clear:hover {
+    text-decoration: underline;
+}

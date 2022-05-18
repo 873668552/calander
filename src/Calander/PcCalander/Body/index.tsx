@@ -74,7 +74,8 @@ const Body = (props: Iprops) => {
                                                 <>
                                                     <div className={`${end && start && date && date.valueOf() === start ? 'ows-con-start-half' : ''} ${end && start && date && date.valueOf() === end ? 'ows-con-end-half' : ''}`} />
                                                         <div
-                                                            className={`rows-con ${date && date.valueOf() === start ? 'm2m-picker-cell-in-start' : ''} ${date && date.valueOf() === end ? 'm2m-picker-cell-in-end' : ''}`}
+                                                            style={date ? { cursor: 'pointer' } : {}}
+                                                            className={`${date ? 'rows-has-date' : ''} rows-con ${date && date.valueOf() === start ? 'm2m-picker-cell-in-start' : ''} ${date && date.valueOf() === end ? 'm2m-picker-cell-in-end' : ''}`}
                                                             onClick={() => { onChange(date, ind) }}
                                                         >
                                                             {

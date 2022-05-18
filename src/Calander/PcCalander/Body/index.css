@@ -48,13 +48,12 @@
     height: 2.08vw;
     line-height: 2.08vw;
     text-align: center;
-    cursor: pointer;
     font-family: 'Poppins';
     font-style: normal;
     z-index: 1;
 }
 
-.rows-con:hover {
+.rows-has-date:hover {
     border-radius: 1.04vw;
     border: 1px solid #3FA1D9;
 }

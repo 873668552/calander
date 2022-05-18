@@ -73,7 +73,7 @@
     z-index: 1;
 }
 
-.mbrows-con:hover {
+.rows-has-date:hover {
     border-radius: 5.33vw;
     border: 1px solid #3FA1D9;
 }

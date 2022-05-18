@@ -4,11 +4,13 @@ import './index.css'
 type Iprops = {
     start?: number | undefined
     end?: number | undefined
+    isError?: boolean
 }
 const Header = (props: Iprops) => {
     const {
-        start,
         end,
+        start,
+        // isError,
     } = props
     return (
         <div className='mb-calander-header mb_child_padding'>
@@ -17,7 +19,11 @@ const Header = (props: Iprops) => {
                 <div className='mb-add-date-time'>{start ? formatDate(start) : 'Add dates'}</div>
            </div>
            <div className='mb-day-detail'>
-                <div className='mb-day-detail-radius'>1天</div>
+                <div className='mb-day-detail-radius'>
+                    {
+                        `共${start && end ? (end - start) / 86400000 : '0'}天`
+                    }
+                </div>
            </div>
            <div className='mb-add-date'>
                 <div className='mb-add-date-title'>Check out</div>

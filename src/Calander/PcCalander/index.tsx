@@ -22,6 +22,7 @@ const Calander = (props: Props) => {
         year,
         month,
         start,
+        isError,
         addDays,
         isSingle,
         leftMonthDays,
@@ -38,6 +39,7 @@ const Calander = (props: Props) => {
             <CalHeader
                 end={end}
                 start={start}
+                isError={isError}
                 isSingle={props.isSingle}
             />
             <div

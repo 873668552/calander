@@ -5,6 +5,7 @@ type Iprops = {
     start?: number | undefined
     end?: number | undefined
     isSingle?: boolean
+    isError?: boolean
 }
 const Header = (props: Iprops) => {
     const {

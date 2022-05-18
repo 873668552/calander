@@ -2,24 +2,108 @@
     flex: 1;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 0 5.866vw;
+    position: relative;
+}
+.mb-time-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4.266vw;
+    line-height: 6.4vw;
+    text-transform: uppercase;
+    color: #0A0A28;
+    margin: 6.4vw 0;
+}
+.calander-rows-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.week-title-con {
+    margin-bottom: 3.733vw;
+}
+.rows_week_title {
+    width: 6.4vw;
+    height: 6.4vw;
+    line-height: 6.4vw;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.733vw;
+    text-align: center;
+    color: #0A0A28;
+}
+
+.rows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10.66vw;
+    text-align: center;
+    width: 10.66vw;
+    flex: 1;
+    position: relative;
+    margin: 2px 0;
+}
+.ows-con-start-half {
+    position: absolute;
+    width: 50%;
+    height: 10.66vw;
+    background: #F6F7FA;
+    right: 0;
+    top: 0;
+}
+.ows-con-end-half {
+    width: 50%;
+    height: 10.66vw;
+    background: #F6F7FA;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.rows-con {
+    width: 10.66vw;
+    height: 10.66vw;
+    line-height: 10.66vw;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: normal;
+    z-index: 1;
+}
+
+.rows-con:hover {
+    border-radius: 5.33vw;
+    border: 1px solid #3FA1D9;
+}
+
+.rows-disable {
+    color: #CCCCCC;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration-line: line-through;
 }
 
 /* 开始日期 */
 .m2m-picker-cell-in-start {
     background: #3FA1D9;
+    /* border-radius: 50%; */
     color: white;
-    border-radius: 20px;
+    border-radius: 5.33vw;
 }
 /* 选择 */
 .m2m-picker-cell-in-range {
     background: #F6F7FA;
 }
-
 /* 结束日期 */
 .m2m-picker-cell-in-end {
     background: #0A0A28;
     color: white;
-    border-radius: 20px;
+    border-radius: 5.33vw;
 }
+
 
 

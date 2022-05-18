@@ -18,9 +18,11 @@ const Calander = (props: Props) => {
         visible,
         initValue = [],
         isMbCalander,
+        disableFn,
         // 如果没有的话，选择当前年和后一年为初始化值
         mbCalanderYear = [nowDate.getFullYear(), nowDate.getFullYear() + 1]
     } = props
+    let [isError, setError] = useState(true);
     let curDate = initValue[0] && !!new Date(initValue[0]).valueOf() ? new Date(initValue[0]) : nowDate
     let [isOpen, setIsOpen] = useState(!!visible);
     let [isSingle, setIsSingle] = useState(props.isSingle);
@@ -32,13 +34,14 @@ const Calander = (props: Props) => {
     let [year, setYear] = useState(curDate.getFullYear());
     let [month, setMonth] = useState(curDate.getMonth());
     // 日历渲染数据
-    let mbDays: Array<any> = []
+    let mbDays: Array<Array<any>> = []
     if (isMbCalander) {
         mbCalanderYear && mbCalanderYear.map((item) => {
-            mbDays.concat(getFullYearDays(item))
+            // mbDays.concat(getFullYearDays(item))
+            mbDays.push(getFullYearDays(item))
         })
     }
-    let [mbCalander, setMbCalander] = useState<any []>(mbDays);
+    let [mbCalander, setMbCalander] = useState(mbDays);
    
     useEffect(()=>{
         let initDays = initDate(curDate.getFullYear(), curDate.getMonth())
@@ -57,8 +60,20 @@ const Calander = (props: Props) => {
     useEffect(()=>{
         if (props.isSingle) {
             props.onChange && props.onChange(start)
+            if (start) {
+                setError(!!checkDate(start))
+            }
         } else {
             props.onChange && props.onChange([start, end])
+            // 检测参数
+            if (start && end) {
+                for(let i = start; i <= end; i+=86400000 ) {
+                    if (checkDate(i)) {
+                        setError(true)
+                        return
+                    }
+                }
+            }
         }
     },[start, end]) 
 
@@ -66,6 +81,9 @@ const Calander = (props: Props) => {
         if (!date) {
             return
         }
+        // 去除错误展示
+        setError(false)
+        setAddDays(0)
         if (props.isSingle) {
             return setStart(date.valueOf())
         }
@@ -167,7 +185,7 @@ const Calander = (props: Props) => {
     }, [month, year])
 
     const bottomAddChange = useCallback((adds: number) => {
-        // 86400000
+        setError(false)
         if (addDays === 0) {
             setAddDays(adds)
             if (!start) {
@@ -207,11 +225,22 @@ const Calander = (props: Props) => {
 
     const clearDate = useCallback(() => {
         setAddDays(0)
+        setError(false)
         setEnd(0)
     },[])
+
     const onClose = useCallback(() => {
         setIsOpen(false)
     },[])
+
+    // 错误检测
+    const checkDate = useCallback((param: any) => {
+        if (isError) {
+            return isError
+        } else {
+            return disableFn && disableFn(param)
+        }
+    },[isError])
 
     return {
         addDays,
@@ -231,6 +260,9 @@ const Calander = (props: Props) => {
         disableFn: props.disableFn,
         onClose:onClose,
         isMbCalander,
+        mbCalanderYear,
+        isError,
+        setError
     }
 }
 

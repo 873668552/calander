@@ -4,9 +4,54 @@
     display: flex;
     background-color: white;
     flex-direction: column;
+    position: relative;
 }
 
 .mb_child_padding {
-    padding: 0 5.3vw;
+    padding: 0 5.333vw;
 }
-
+.mb-error-con {
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    height: 16vw;
+    top: 23.46vw;
+    z-index: 100;
+}
+.mb-error {
+    display: flex;
+    background: #FFEFEF;
+    border: 1px solid #FF5353;
+    border-radius: 2.133vw;
+    height: 100%;
+}
+.mb-error-icon {
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mb-error-icon-img {
+    width: 9.333vw;
+    height: 9.333vw;
+    /* background-color: red; */
+}
+.mb-error-text {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.7vw;
+    line-height: 4.2vw;
+}
+.mb-error-close {
+    transform: rotate(135deg);
+    font-size: 9.2vw;
+    width: 10vw;
+    position: relative;
+    top: -2vw;
+    right: 5vw;
+}

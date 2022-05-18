@@ -3,5 +3,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: pink;
+    background-color: white;
+}
+.mb-calander-bottom-con {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    border-top: 1px solid #EAEDEE;
+    border-bottom: 1px solid #EAEDEE;
+}
+
+.mb-add-days-active {
+    background: #F6F7FA;
+}
+
+.mb-add-days-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #EAEDEE;
+    border-radius: 2.133vw;
+    /* width: 22.133vw; */
+    /* height: 9.6vw; */
+    margin-right: 2.166vw;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.733vw;
+    color: #000000;
+    padding: 1.6vw 3.333vw;
+}
+
+.mb-add-days-clear {
+    text-decoration: underline;
 }

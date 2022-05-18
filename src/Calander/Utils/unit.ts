@@ -23,10 +23,18 @@ export const getRenderDataPerMonth: (year: number, month: number) => Array<any> 
     for (let i = 42 - monthData.length, j = 0; j < i; j++) {
         monthData.push(null)
     }
-    monthData.forEach(element => {
-        
-    });
     return monthData
+}
+
+export const getFullYearDays: (year: number, startMon?: number) => Array<any> = (year: number, startMon?: number) => {
+
+    //定义每个月的天数，如果是闰年第二月改为29天
+    let startM = startMon || 0,
+    yearDays = []
+    for(startM; startM < 12; startM++) {
+      yearDays.push(getRenderDataPerMonth(year, startM))
+    }
+    return yearDays
 }
 
 export const initDate: (inpYear?: number | undefined, inpMon?: number | undefined) => Array<Array<any>> = (inpYear?: number | undefined, inpMon?: number | undefined) => {

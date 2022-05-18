@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { initDate, getRenderDataPerMonth, completeDateVauleof } from './Utils/unit'
+import { initDate, getRenderDataPerMonth, completeDateVauleof, getFullYearDays } from './Utils/unit'
 
 type Props = {
     initValue?: Array<number | undefined>
@@ -8,15 +8,20 @@ type Props = {
     onClose?: (date: Array<any>) => void
     isSingle?: boolean
     disableFn?: (curDate: any) => boolean | undefined
+    isMbCalander?: boolean
+    mbCalanderYear?: Array<number>
 };
 
 const Calander = (props: Props) => {
+    let nowDate = new Date()
     const {
         visible,
-        disableFn,
         initValue = [],
+        isMbCalander,
+        // 如果没有的话，选择当前年和后一年为初始化值
+        mbCalanderYear = [nowDate.getFullYear(), nowDate.getFullYear() + 1]
     } = props
-    let curDate = initValue[0] && !!new Date(initValue[0]).valueOf() ? new Date(initValue[0]) : new Date()
+    let curDate = initValue[0] && !!new Date(initValue[0]).valueOf() ? new Date(initValue[0]) : nowDate
     let [isOpen, setIsOpen] = useState(!!visible);
     let [isSingle, setIsSingle] = useState(props.isSingle);
     let [addDays, setAddDays] = useState(0);
@@ -26,6 +31,14 @@ const Calander = (props: Props) => {
     let [rightMonthDays, setRightDays] = useState<any []>([]);
     let [year, setYear] = useState(curDate.getFullYear());
     let [month, setMonth] = useState(curDate.getMonth());
+    // 日历渲染数据
+    let mbDays: Array<any> = []
+    if (isMbCalander) {
+        mbCalanderYear && mbCalanderYear.map((item) => {
+            mbDays.concat(getFullYearDays(item))
+        })
+    }
+    let [mbCalander, setMbCalander] = useState<any []>(mbDays);
    
     useEffect(()=>{
         let initDays = initDate(curDate.getFullYear(), curDate.getMonth())
@@ -199,7 +212,10 @@ const Calander = (props: Props) => {
     const onClose = useCallback(() => {
         setIsOpen(false)
     },[])
+
     return {
+        addDays,
+        mbCalander,
         isOpen, setIsOpen,
         isSingle, setIsSingle,
         start, setStart,
@@ -214,7 +230,7 @@ const Calander = (props: Props) => {
         clearDate,
         disableFn: props.disableFn,
         onClose:onClose,
-        addDays
+        isMbCalander,
     }
 }
 

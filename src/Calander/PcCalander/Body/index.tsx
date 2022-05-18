@@ -29,8 +29,6 @@ const Body = (props: Iprops) => {
         disableFn
     } = props
 
-    // console.log(monthDays)
-    
     return (
         <div>
             <div className='pc_body pc_body_change_mon'>

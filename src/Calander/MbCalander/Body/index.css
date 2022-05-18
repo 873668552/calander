@@ -1,0 +1,25 @@
+.mb-body-con {
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* 开始日期 */
+.m2m-picker-cell-in-start {
+    background: #3FA1D9;
+    color: white;
+    border-radius: 20px;
+}
+/* 选择 */
+.m2m-picker-cell-in-range {
+    background: #F6F7FA;
+}
+
+/* 结束日期 */
+.m2m-picker-cell-in-end {
+    background: #0A0A28;
+    color: white;
+    border-radius: 20px;
+}
+
+

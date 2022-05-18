@@ -1,8 +1,8 @@
 .App {
-  margin: 0 auto;
+  /* margin: 0 auto;
   text-align: center;
-  padding-top: 130px;
-  width: 45.8vw;
+  padding-top: 130px; */
+  /* width: 45.8vw; */
   /* width: 804px;
   height: 556px; */
 }
@@ -13,8 +13,8 @@
 }
 /* 移动端 */
 .m-con {
-  width: 375px;
-  min-height: 812px;
+  width: 100%;
+  height: 85vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {

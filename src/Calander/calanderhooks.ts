@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { initDate, getRenderDataPerMonth, completeDateVauleof, getFullYearDays } from './Utils/unit'
 
 type Props = {
+    style?: any
     initValue?: Array<number | undefined>
     visible?: Boolean
     onChange?: (date?: Array<any> | any) => void
@@ -9,16 +10,19 @@ type Props = {
     isSingle?: boolean
     disableFn?: (curDate: any) => boolean | undefined
     isMbCalander?: boolean
+    isAbsolute?: boolean
     mbCalanderYear?: Array<number>
 };
 
 const Calander = (props: Props) => {
     let nowDate = new Date()
     const {
+        style = {},
         visible,
         initValue = [],
         isMbCalander,
         disableFn,
+        isAbsolute,
         // 如果没有的话，选择当前年和后一年为初始化值
         mbCalanderYear = [nowDate.getFullYear(), nowDate.getFullYear() + 1]
     } = props
@@ -47,14 +51,14 @@ const Calander = (props: Props) => {
         let initDays = initDate(curDate.getFullYear(), curDate.getMonth())
         setLeftDays(initDays[0])
         setRightDays(initDays[1])
-        window.onresize = () => {
-            let clientWidth=document.documentElement.clientWidth;
-            if (clientWidth >= 1420) {
-                setIsSingle(false)
-            } else if (clientWidth < 1420) {
-                setIsSingle(true)
-            }
-        }
+        // window.onresize = () => {
+        //     let clientWidth=document.documentElement.clientWidth;
+        //     if (clientWidth >= 1420) {
+        //         setIsSingle(false)
+        //     } else if (clientWidth < 1420) {
+        //         setIsSingle(true)
+        //     }
+        // }
     },[]) 
 
     useEffect(()=>{
@@ -243,8 +247,10 @@ const Calander = (props: Props) => {
     },[isError])
 
     return {
+        style,
         addDays,
         mbCalander,
+        isAbsolute,
         isOpen, setIsOpen,
         isSingle, setIsSingle,
         start, setStart,

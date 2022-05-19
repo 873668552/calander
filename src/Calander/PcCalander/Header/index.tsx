@@ -6,12 +6,14 @@ type Iprops = {
     end?: number | undefined
     isSingle?: boolean
     isError?: boolean
+    isAbsolute?: boolean
 }
 const Header = (props: Iprops) => {
     const {
         start,
         end,
-        isSingle
+        isSingle,
+        isAbsolute
     } = props
     return (
         <div className='calander-header'>

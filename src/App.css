@@ -7,6 +7,17 @@
   height: 556px; */
 }
 
+.modo-inp {
+  width: 312px;
+  height: 56px;
+  border: 1px solid #EAEDEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

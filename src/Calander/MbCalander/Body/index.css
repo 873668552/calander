@@ -71,6 +71,7 @@
     font-family: 'Poppins';
     font-style: normal;
     z-index: 1;
+    font-size: 3.733vw;
 }
 
 .rows-has-date:hover {
@@ -83,7 +84,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 3.733vw;
     text-decoration-line: line-through;
 }
 
